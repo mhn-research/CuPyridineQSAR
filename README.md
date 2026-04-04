@@ -23,13 +23,13 @@ Data derived from publicly available libraries such as RdKit and MorganDescripto
 
 <img width="1274" height="583" alt="image" src="https://github.com/user-attachments/assets/3cd64bf7-99cb-4eff-bf58-f75017e98f69" />
 
-***Other considerations:***
-1. Ligand Synergy Index (LSI)
-2. Chemical Diversity Score (CDS)
-   CDS = 1 - avg(similarity)
-4. Applicability Confidence Score (ACS)
+   ***Other considerations:***
+   1. Ligand Synergy Index (LSI)
+   2. Chemical Diversity Score (CDS)
+      CDS = 1 - avg(similarity)
+   4. Applicability Confidence Score (ACS)
 
-5. **Model building**
+3. **Model building**
 
 A comprehensive list of supervised ML techniques used for modeling. Listed below:
 
@@ -48,41 +48,40 @@ A comprehensive list of supervised ML techniques used for modeling. Listed below
 | Multilayer perception | use only if heavy regularization | No |
 | GNN using DeepChem | Message passing networks | No |
 
-
-7. **Model screening**
+4. **Model screening**
 
 Best perfoming model is chosoen based on multiple dependant results as tablulated below:
 
 | Feature variation | Model | R2(CV) | RMSE | MAE | Std. Dev | Rank |
 | ----------------- | ----- | ------ | ---- | --- | -------- | ---- |
 
-Selection logic is:
-1. Remove models with Low R2
-2. Remove models with high Variance
-3. Consistent across n-Folds
-4. External test-set
-5. Y-Randomization
-6. Top-K Ranking accuracy
+   Selection logic is:
+   1. Remove models with Low R2
+   2. Remove models with high Variance
+   3. Consistent across n-Folds
+   4. External test-set
+   5. Y-Randomization
+   6. Top-K Ranking accuracy
 
-9. **Generate Virtual compounds**
+5. **Generate Virtual compounds**
 
 While generating virtual checmical compounds, conventional permutations/combination may give deviations, untrusted, non-synthesizable inputs. Considerations to overcome:
-1. Scaffaold based generation
-2. Library based expansion
-3. Fragmented recombination
+   1. Scaffaold based generation
+   2. Library based expansion
+   3. Fragmented recombination
 
-11. **Predict pIC50**
+6. **Predict pIC50**
 
 Apply best performing model and derive results
 
-13. **Screen potential candidates**
+7. **Screen potential candidates**
 
-Refer:
-1. Drug likeliness rules
-2. ADMET Filtering
-3. Synthetic Fesibility
+   Refer:
+   1. Drug likeliness rules
+   2. ADMET Filtering
+   3. Synthetic Fesibility
    
-14. **Synthesis**
+8. **Synthesis**
 
 Lab experiments, and recently updated reasarch articles
 
