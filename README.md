@@ -1,4 +1,4 @@
-# PyridineQSAR
+# CuPyridineQSAR
 
 This repository is supporting Quantitative Structure-Activity relationship (QSAR) for Pyridine compounds. Quantitative Structure-Activity Relationship (QSAR) is a computational modeling method used in chemistry, pharmacology, and toxicology to predict the biological activity or property of a compound based on its molecular structure.
 
