@@ -27,20 +27,21 @@ Data derived from publicly available libraries such as RdKit and MorganDescripto
 
 A comprehensive list of supervised ML techniques used for modeling. Listed below:
 
-| ML Techniques | Advantage |
-| ------------- | --------- |
-| Linear Regression | Baseline model, helping to interpret feature importance |
-| Ridge Regression | x |
-| Lasso Regression | x |
-| Elastic Net | Best for small data |
-| Support Vector Regression | Good for non-linear QSAR |
-| K-Nearest Neighbor | Good in similarity |
-| Random Forest | x |
-| XGBoost | x |
-| LightGBM | x |
-| Gaussian Process Regression | For uncertainty estimatation |
-| Multilayer perception | use only if heavy regularization |
-| GNN using DeepChem | Message passing networks |
+| ML Techniques | Advantage | Code available (Yes/No) |
+| ------------- | --------- | ----------------------- |
+| Linear Regression | Baseline model, helping to interpret feature importance | No |
+| Ridge Regression | x | No |
+| Lasso Regression | x | No |
+| Elastic Net | Best for small data | No |
+| Support Vector Regression | Good for non-linear QSAR | No |
+| K-Nearest Neighbor | Good in similarity | No |
+| Random Forest | x | No |
+| XGBoost | x | No |
+| LightGBM | x | No |
+| Gaussian Process Regression | For uncertainty estimatation | No |
+| Multilayer perception | use only if heavy regularization | No |
+| GNN using DeepChem | Message passing networks | No |
+
 
 7. **Model screening**
 8. **Generate Virtual compounds**
