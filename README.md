@@ -12,12 +12,12 @@ Following diagram demonstrates end-to-end approach that we implemented for predi
 1. **Preparation**
 
 
-From literature and research article, pIC50 values and other properties were extracted. Example data given as below:
+From literature and research article, pIC50 values and other properties were extracted. curated raw data found in data folder. Example data given as below:
 
 | Ligand 1     | Ligand 2 | Charge | Incubation Time | Cell Lines | IC50 | pIC50
 | ----------- | ---------- | -------- | ------------ | ---- | --- | --- |
 | c1ccnc(c1)c1nc(ccc1)c1ncccc1 | [H]O[H] | 1 | 24h | A2780 | 7.1 | 5.15
- 
+
 3. **Feature engineering**
 4. **Model building**
 5. **Model screening**
