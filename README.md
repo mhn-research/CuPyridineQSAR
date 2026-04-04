@@ -44,10 +44,25 @@ A comprehensive list of supervised ML techniques used for modeling. Listed below
 
 
 7. **Model screening**
-8. **Generate Virtual compounds**
-9. **Predict pIC50**
-10. **Screen potential candidates**
-11. **Synthesis**
+
+Best perfoming model is chosoen based on multiple dependant results as tablulated below:
+
+| Feature variation | Model | R2(CV) | RMSE | MAE | Std. Dev | Rank |
+
+Selection logic is:
+1. Remove models with Low R2
+2. Remove models with high Variance
+3. Consistent across n-Folds
+4. External test-set
+5. Y-Randomization
+6. Top-K Ranking accuracy
+
+
+
+9. **Generate Virtual compounds**
+10. **Predict pIC50**
+11. **Screen potential candidates**
+12. **Synthesis**
 
 ## B. Best performing Models and Results
 
