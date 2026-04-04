@@ -23,7 +23,13 @@ Data derived from publicly available libraries such as RdKit and MorganDescripto
 
 <img width="1274" height="583" alt="image" src="https://github.com/user-attachments/assets/3cd64bf7-99cb-4eff-bf58-f75017e98f69" />
 
-3. **Model building**
+***Other considerations:***
+1. Ligand Synergy Index (LSI)
+2. Chemical Diversity Score (CDS)
+   CDS = 1 - avg(similarity)
+4. Applicability Confidence Score (ACS)
+
+5. **Model building**
 
 A comprehensive list of supervised ML techniques used for modeling. Listed below:
 
@@ -58,12 +64,27 @@ Selection logic is:
 5. Y-Randomization
 6. Top-K Ranking accuracy
 
-
-
 9. **Generate Virtual compounds**
-10. **Predict pIC50**
-11. **Screen potential candidates**
-12. **Synthesis**
+
+While generating virtual checmical compounds, conventional permutations/combination may give deviations, untrusted, non-synthesizable inputs. Considerations to overcome:
+1. Scaffaold based generation
+2. Library based expansion
+3. Fragmented recombination
+
+11. **Predict pIC50**
+
+Apply best performing model and derive results
+
+13. **Screen potential candidates**
+
+Refer:
+1. Drug likeliness rules
+2. ADMET Filtering
+3. Synthetic Fesibility
+   
+14. **Synthesis**
+
+Lab experiments, and recently updated reasarch articles
 
 ## B. Best performing Models and Results
 
