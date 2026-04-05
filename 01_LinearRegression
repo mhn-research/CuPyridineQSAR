@@ -4,8 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyNCJCRk6sqIh4TYJhrthnUV",
-      "include_colab_link": true
+      "authorship_tag": "ABX9TyPxVfhCX7ox7zeTHIxsZmnD"
     },
     "kernelspec": {
       "name": "python3",
@@ -17,41 +16,12 @@
   },
   "cells": [
     {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/mhn-research/CuPyridineQSAR/blob/main/01_LinearRegression\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
       "cell_type": "code",
-      "execution_count": 5,
+      "execution_count": null,
       "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "hdbKSwT164Wy",
-        "outputId": "7c110e22-436a-4470-fdb0-b70ed2e5139b"
+        "id": "hdbKSwT164Wy"
       },
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Collecting rdkit\n",
-            "  Downloading rdkit-2025.9.6-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.8 kB)\n",
-            "Requirement already satisfied: numpy in /usr/local/lib/python3.12/dist-packages (from rdkit) (2.0.2)\n",
-            "Requirement already satisfied: Pillow in /usr/local/lib/python3.12/dist-packages (from rdkit) (11.3.0)\n",
-            "Downloading rdkit-2025.9.6-cp312-cp312-manylinux_2_28_x86_64.whl (36.7 MB)\n",
-            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m36.7/36.7 MB\u001b[0m \u001b[31m45.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
-            "\u001b[?25hInstalling collected packages: rdkit\n",
-            "Successfully installed rdkit-2025.9.6\n"
-          ]
-        }
-      ],
+      "outputs": [],
       "source": [
         "# Install required packages if needed\n",
         "!pip install rdkit\n",
@@ -87,7 +57,7 @@
     {
       "cell_type": "markdown",
       "source": [
-        "**Data preprocessing**\n",
+        "**Data exploration**\n",
         "\n",
         "Import curated literature data input"
       ],
@@ -98,45 +68,108 @@
     {
       "cell_type": "code",
       "source": [
-        "df = pd.read_csv('/content/data/00_base_data.csv')\n",
+        "df = pd.read_csv('/content/00_base_data.csv')\n",
         "print(f\"Base data shape: {df.shape}\")\n",
-        "#print(df.head(3))\n",
-        "\n",
-        "pIC50_col = None\n",
-        "smiles_col = None\n",
-        "\n",
-        "for col in df.columns:\n",
-        "  col_lower = str(col).lower()\n",
-        "  print(col_lower)\n",
-        "\n",
-        "print(f\"Target column: {pIC50_col}\")\n",
-        "print(f\"SMILES column: {smiles_col}\")"
+        "print(f\"Base data Information: {df.info()}\")\n",
+        "#print(df.head(3))"
       ],
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "9FLQpfSM8izq",
-        "outputId": "65833b72-6c39-4464-be0a-7efe44bd4506"
+        "outputId": "a8072e63-3ff8-445a-c73d-b198e44abfca"
       },
-      "execution_count": 15,
+      "execution_count": 11,
       "outputs": [
         {
           "output_type": "stream",
           "name": "stdout",
           "text": [
             "Base data shape: (223, 9)\n",
-            "s.no\n",
-            "l1\n",
-            "l2\n",
-            "l3\n",
-            "charge\n",
-            "incubation time (hours)\n",
-            "cell lines\n",
-            "ic50\n",
-            "pic50\n",
-            "Target column: None\n",
-            "SMILES column: None\n"
+            "<class 'pandas.core.frame.DataFrame'>\n",
+            "RangeIndex: 223 entries, 0 to 222\n",
+            "Data columns (total 9 columns):\n",
+            " #   Column                   Non-Null Count  Dtype  \n",
+            "---  ------                   --------------  -----  \n",
+            " 0   S.No                     223 non-null    int64  \n",
+            " 1   L1                       223 non-null    object \n",
+            " 2   L2                       223 non-null    object \n",
+            " 3   L3                       155 non-null    object \n",
+            " 4   charge                   223 non-null    int64  \n",
+            " 5   Incubation Time (hours)  223 non-null    object \n",
+            " 6   Cell Lines               223 non-null    object \n",
+            " 7   IC50                     223 non-null    object \n",
+            " 8   pIC50                    213 non-null    float64\n",
+            "dtypes: float64(1), int64(2), object(6)\n",
+            "memory usage: 15.8+ KB\n",
+            "Base data Information: None\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Data pre-processing**"
+      ],
+      "metadata": {
+        "id": "5_UBADIOkG2e"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df_clean = df.dropna()\n",
+        "print(\"Cleaned data size: \", df_clean.shape)\n",
+        "print(\"Cleaned data info: \", df_clean.info())\n",
+        "\n",
+        "# Extract useful feature and output only\n",
+        "select_column = ['L1', 'L2', 'L3', 'pIC50']\n",
+        "\n",
+        "clean_data = df_clean[select_column]\n",
+        "clean_data.to_csv('/content/00_clean_data.csv', index=False)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JE_r96KAkL7I",
+        "outputId": "1cafb7ef-0cb0-4387-e1df-496bf06c15b6"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Cleaned data size:  (145, 9)\n",
+            "<class 'pandas.core.frame.DataFrame'>\n",
+            "Index: 145 entries, 22 to 221\n",
+            "Data columns (total 9 columns):\n",
+            " #   Column                   Non-Null Count  Dtype  \n",
+            "---  ------                   --------------  -----  \n",
+            " 0   S.No                     145 non-null    int64  \n",
+            " 1   L1                       145 non-null    object \n",
+            " 2   L2                       145 non-null    object \n",
+            " 3   L3                       145 non-null    object \n",
+            " 4   charge                   145 non-null    int64  \n",
+            " 5   Incubation Time (hours)  145 non-null    object \n",
+            " 6   Cell Lines               145 non-null    object \n",
+            " 7   IC50                     145 non-null    object \n",
+            " 8   pIC50                    145 non-null    float64\n",
+            "dtypes: float64(1), int64(2), object(6)\n",
+            "memory usage: 11.3+ KB\n",
+            "Cleaned data info:  None\n",
+            "                                                   L1  \\\n",
+            "22  c1(cc(cc(n1)c1ccccn1)c1cc(c(c(c1)OC)OC)OC)c1nc...   \n",
+            "23             c1(cc(cc(n1)c1ccccn1)c1ccccc1)c1ncccc1   \n",
+            "24             c1(cc(cc(n1)c1ccccn1)c1ccccc1)c1ncccc1   \n",
+            "\n",
+            "                                     L2                  L3  pIC50  \n",
+            "22                             c1nccn1C   [O-]Cl(=O)(=O)=O    5.90  \n",
+            "23  C1=C(C2=C(C=C1)C(C(=CC2=O)C)=O)O[H]       O[N+](=O)[O-]   4.98  \n",
+            "24   c1c(cc2c(c1O)c(=O)cc(o2)c1ccccc1)O      O[N+](=O)[O-]    5.09  \n"
           ]
         }
       ]
