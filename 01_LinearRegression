@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyMiT77QRJQJpMwaSCAEVAAB"
+      "authorship_tag": "ABX9TyMWg1vPgD7dvpVKZ5goMyQ0"
     },
     "kernelspec": {
       "name": "python3",
@@ -383,10 +383,17 @@
         "    'L2_MolWt': {'method': 'robust_scale'},\n",
         "    'L2_MolLogP': {'method': 'robust_scale'},\n",
         "    'L2_TPSA': {'method': 'robust_scale'},\n",
+        "    'L2_FractionCSP3': {'method': 'robust_scale'},\n",
+        "\n",
+        "    'L3_MolWt': {'method': 'robust_scale'},\n",
+        "    'L3_MolLogP': {'method': 'robust_scale'},\n",
+        "    'L3_TPSA': {'method': 'robust_scale'},\n",
         "    'L3_FractionCSP3': {'method': 'robust_scale'},\n",
         "\n",
         "    # Binarization for sparse count data\n",
         "    'L1_NumHDonors': {'method': 'binarize', 'threshold': 0},\n",
+        "\n",
+        "    'L2_NumHDonors': {'method': 'binarize', 'threshold': 0},\n",
         "\n",
         "    'L2_NumHDonors': {'method': 'binarize', 'threshold': 0},\n",
         "\n",
@@ -399,15 +406,23 @@
         "    'L2_NumRotatableBonds': {'method': 'one_hot'},\n",
         "    'L2_NumAromaticRings': {'method': 'one_hot'},\n",
         "\n",
+        "    'L3_NumHAcceptors': {'method': 'one_hot'},\n",
+        "    'L3_NumRotatableBonds': {'method': 'one_hot'},\n",
+        "    'L3_NumAromaticRings': {'method': 'one_hot'},\n",
+        "\n",
         "    # Standard scaling for continuous variables\n",
         "    'L1_HeavyAtomCount': {'method': 'standard_scale'},\n",
         "\n",
         "    'L2_HeavyAtomCount': {'method': 'standard_scale'},\n",
         "\n",
+        "    'L3_HeavyAtomCount': {'method': 'standard_scale'},\n",
+        "\n",
         "    # Already this is effective representation. No normalization technique required\n",
         "    'L1_NumAliphaticRings': {'method': 'none'},\n",
         "\n",
-        "    'L2_NumAliphaticRings': {'method': 'none'}\n",
+        "    'L2_NumAliphaticRings': {'method': 'none'},\n",
+        "\n",
+        "    'L3_NumAliphaticRings': {'method': 'none'}\n",
         "}\n",
         "\n",
         "# Apply transform/normalization tehcnique and write to file\n",
@@ -460,42 +475,8 @@
       "metadata": {
         "id": "nkAaauAJfk6w"
       },
-      "execution_count": 22,
+      "execution_count": 24,
       "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "df = pd.read_csv('/content/sample_data/00_feature_data.csv')\n",
-        "print(f\"Base data shape: {df.shape}\")\n",
-        "print(f\"Base data Information: {df['L1_HeavyAtomCount'].describe()}\")"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "E2Npbme3w5cq",
-        "outputId": "aa30383d-fdfa-4e8c-f3e3-5918c858b280"
-      },
-      "execution_count": 19,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Base data shape: (140, 34)\n",
-            "Base data Information: count    140.000000\n",
-            "mean      26.071429\n",
-            "std        3.429963\n",
-            "min       18.000000\n",
-            "25%       25.000000\n",
-            "50%       26.000000\n",
-            "75%       26.000000\n",
-            "max       37.000000\n",
-            "Name: L1_HeavyAtomCount, dtype: float64\n"
-          ]
-        }
-      ]
     }
   ]
 }
