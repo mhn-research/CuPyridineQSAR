@@ -43,20 +43,20 @@ Data derived from publicly available libraries such as RdKit and MorganDescripto
 
 A comprehensive list of supervised ML techniques used for modeling. Listed below:
 
-| ML Techniques | Advantage | Code available (Yes/No) |
-| ------------- | --------- | ----------------------- |
-| Linear Regression | Baseline model, helping to interpret feature importance | No |
-| Ridge Regression | x | No |
-| Lasso Regression | x | No |
-| Elastic Net | Best for small data | No |
-| Support Vector Regression | Good for non-linear QSAR | No |
-| K-Nearest Neighbor | Good in similarity | No |
-| Random Forest | x | No |
-| XGBoost | x | No |
-| LightGBM | x | No |
-| Gaussian Process Regression | For uncertainty estimatation | No |
-| Multilayer perception | use only if heavy regularization | No |
-| GNN using DeepChem | Message passing networks | No |
+| ML Techniques | Advantage | Implementation Results | Code available (Yes/No) |
+| ------------- | --------- | ----------------------- | ---------------------- |
+| Linear Regression | Baseline model, helping to interpret feature importance | This model provides a weak but valid baseline (R² = 0.39), explaining some trend in the data but demonstrating that linear relationships are insufficient to accurately predict pIC50, necessitating more complex algorithms | No |
+| Ridge Regression | x | x | No |
+| Lasso Regression | x | x | No |
+| Elastic Net | Best for small data | x | No |
+| Support Vector Regression | Good for non-linear QSAR | | x | No |
+| K-Nearest Neighbor | Good in similarity | x | No |
+| Random Forest | x | x | No |
+| XGBoost | x | x | No |
+| LightGBM | x | x | No |
+| Gaussian Process Regression | For uncertainty estimatation | x | No |
+| Multilayer perception | use only if heavy regularization | x | No |
+| GNN using DeepChem | Message passing networks | x | No |
 
 4. **Model screening**
 
