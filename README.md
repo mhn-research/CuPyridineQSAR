@@ -45,7 +45,7 @@ A comprehensive list of supervised ML techniques used for modeling. Listed below
 
 | ML Techniques | Advantage | Implementation Results | Code available (Yes/No) |
 | ------------- | --------- | ----------------------- | ---------------------- |
-| Linear Regression | Baseline model, helping to interpret feature importance | This model provides a weak but valid baseline (R² = 0.39), explaining some trend in the data but demonstrating that linear relationships are insufficient to accurately predict pIC50, necessitating more complex algorithms | No |
+| Linear Regression | Baseline model, helping to interpret feature importance | This model provides a weak but valid baseline (R² = 0.39), explaining some trend in the data but demonstrating that linear relationships are insufficient to accurately predict pIC50, necessitating more complex algorithms | Yes |
 | Ridge Regression | x | x | No |
 | Lasso Regression | x | x | No |
 | Elastic Net | Best for small data | x | No |
