@@ -1,2 +1,2 @@
 Model,Variant,R2(CV),RMSE,MAE,Std. Dev,Rank
-Linear Regression,statistical,0.512785,0.408532,0.309859,0.273067,1
+Linear Regression,statistical,0.346009,0.469322,0.353834,0.364434,1
