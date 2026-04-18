@@ -1,0 +1,19 @@
+L1,L2,L3,predicted_pIC50
+c1(cc(cc(n1)c1ccccn1)c1cc(c(c(c1)OC)OC)OC)c1ncccc1,c1nccn1C, [O-]Cl(=O)(=O)=O ,-28.53
+c1(cc(cc(n1)c1ccccn1)c1ccccc1)c1ncccc1,C1=C(C2=C(C=C1)C(C(=CC2=O)C)=O)O[H],O[N+](=O)[O-],-19.93
+c1(cc(cc(n1)c1ccccn1)c1ccccc1)c1ncccc1, c1c(cc2c(c1O)c(=O)cc(o2)c1ccccc1)O,O[N+](=O)[O-] ,-24.55
+c1(cc(cc(n1)c1ccccn1)c1ccccc1)c1ncccc1,c1(c(ccc(c1)/C=C/C(=C/C(=O)/C=C/c1ccc(c(c1)OC)O)/O)O)OC,O[N+](=O)[O-],-33.05
+c1(cc(cc(n1)c1ccccn1)c1ccc(cc1)C)c1ncccc1 , c12cc(ccc1cc(cc2)[C@H](C(=O)O)C)OC,Cl ,-22.29
+ c1(cc(cc(n1)c1ccccn1)c1occc1)c1ncccc1,c12cc(ccc1cc(cc2)[C@H](C(=O)O)C)OC,Cl ,-33.81
+c1ccnc(c1)c1nc(ccc1)c1ncccc1 ,C1(=C(C(=O)c2c(C1=O)cccc2)CC=C(C)C)O,[H]O[H],-28.54
+c1ccnc(c1)c1nc(ccc1)c1ncccc1 ,C1(=C(C(=O)c2c(C1=O)cccc2)CC=C(C)C)O,[H]O[H],-28.54
+c1ccnc(c1)c1nc(ccc1)c1ncccc1 ,C1(=C(C(=O)c2c(C1=O)cccc2)CC=C(C)C)O,[H]O[H],-28.54
+c1ccnc(c1)c1nc(ccc1)c1ncccc1 ,C1(=C(C(=O)c2c(C1=O)cccc2)CC=C(C)C)O,[H]O[H],-28.54
+c1ccnc(c1)c1nc(ccc1)c1ncccc1 ,C1(=C(C(=O)c2c(C1=O)cccc2)CC=C(C)C)O,[H]O[H],-28.54
+c1ccnc(c1)c1nc(ccc1)c1ncccc1,Cl,Cl,-11.92
+c1(cc(cc(n1)c1ccccn1)c1ccncc1)c1ncccc1,Cl,Cl,-17.07
+c1(cc(cc(n1)c1ccccn1)c1cc(ccc1)OC)c1ncccc1 ,Cl,Cl,-13.78
+c1(cc(cc(n1)c1ccccn1)c1cc(ccc1)OC)c1ncccc1 ,Cl,Cl,-13.78
+c1(cc(cc(n1)c1ccccn1)c1cc(ccc1)OC)c1ncccc1 ,Cl,Cl,-13.78
+c1(cc(cc(n1)c1ccccn1)c1ccc(cc1)OC)c1ncccc1,Cl,Cl,-13.78
+c1(cc(cc(n1)c1ccccn1)c1ccc(cc1)OC)c1ncccc1,Cl,Cl,-13.78

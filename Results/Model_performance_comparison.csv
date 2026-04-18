@@ -1,7 +1,2 @@
 Model,Features,Feature_Selection,R2_CV_Mean,R2_CV_Std,RMSE_Mean,RMSE_Std,MAE_Mean,MAE_Std
 LinearRegression,Descriptors,Variance Threshold,0.4893,0.3114,0.4157,0.1619,0.3173,0.1322
-LinearRegression,Descriptors,Variance Threshold,0.4893,0.3114,0.4157,0.1619,0.3173,0.1322
-LinearRegression,Descriptors,Variance Threshold,0.4893,0.3114,0.4157,0.1619,0.3173,0.1322
-LinearRegression,Descriptors,Variance Threshold,0.4893,0.3114,0.4157,0.1619,0.3173,0.1322
-LinearRegression,Descriptors,Variance Threshold,0.4893,0.3114,0.4157,0.1619,0.3173,0.1322
-LinearRegression,Descriptors,Variance Threshold,0.4893,0.3114,0.4157,0.1619,0.3173,0.1322
